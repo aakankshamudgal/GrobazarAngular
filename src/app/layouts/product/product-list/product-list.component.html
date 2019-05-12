@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row" *ngIf="authService.isAdmin()">
+    <div class="col-sm">
+      <div class="float-right">
+        <button type="button" class="btn btn-primary waves-light" data-toggle="modal" data-target="#exampleModalLong">
+          Add Product
+        </button>
+      </div>
+    </div>
+  </div>
+<br>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        <label for="brand_select">By Brands:</label>
+        <select class="form-control" name="" id="brand_select" [(ngModel)]="selectedBrand">
+          <option *ngFor="let brand of brands" [ngValue]="brand">{{brand}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-9">
+
+      <div class="container">
+    <div class="row" *ngIf="!loading">
+        <div class="col-md-3 col-sm-6" *ngFor="let product of productList | filterByBrand: selectedBrand | paginate: { itemsPerPage: 4, currentPage: page }">
+            <div class="product-grid3">
+                <div class="product-image3">
+                    <a [routerLink]="['/products/product', product.$key]">
+                        <img class="pic-1" [src]="product.productImageUrl">
+                    </a>
+                    <ul class="social">
+                        <li><a (click)="addFavourite(product)"><i class="fa fa-heart"></i></a></li>
+                        <li><a (click)="addToCart(product)"><i class="fa fa-shopping-cart"></i></a></li>
+                        <li><a placement="top" mdbTooltip="Remove Product" container="body" *ngIf="authService.isAdmin()"
+                          (click)="removeProduct(product.$key)">
+                          <i class="fa fa-trash"></i>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="product-content">
+                    <h3 class="title">{{ product.productCategory }}</h3>
+                    <strong>
+                        <a [routerLink]="['/products/product', product.$key]" routerLinkActive="router-link-active">{{
+                          product.productName }}</a>
+                    </strong>
+                    <p class="card-text">{{ product.productDescription }}
+                    </p>
+                    <div class="price">
+                        ₹ {{ product.productPrice }}
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-3">
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
+</div>
+<app-add-product></app-add-product>

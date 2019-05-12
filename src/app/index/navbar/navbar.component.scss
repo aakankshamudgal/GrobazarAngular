@@ -1,0 +1,128 @@
+.navbar {
+  border-bottom: 1px solid yellow;
+  background-color: #fff;
+}
+
+.navbar .navbar-nav > .nav-item > .nav-link {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  padding: 30px 15px !important;
+  color: black;
+}
+
+@media (max-width: 991.98px) {
+  .navbar .navbar-nav > .nav-item > .nav-link {
+    padding: 10px 15px !important;
+  }
+}
+
+.navbar .navbar-nav > .nav-item > .nav-link.active, .navbar .navbar-nav > .nav-item > .nav-link:hover, .navbar .navbar-nav > .nav-item > .nav-link:focus {
+  background: yellow;
+}
+
+@media (max-width: 991.98px) {
+  .navbar .dropdown-menu {
+    position: relative !important;
+    border: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+.navbar .megamenu {
+  padding: 30px !important;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+
+@media (max-width: 991.98px) {
+  .navbar .megamenu {
+    padding: 15px !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+}
+
+.navbar .menu-large h5 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding-bottom: 10px;
+  border-bottom: dotted 1px #555;
+}
+
+@media (max-width: 767.98px) {
+  .navbar .menu-large h5 {
+    font-size: 0.9rem;
+  }
+}
+
+.navbar .menu-large ul {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .menu-large ul .nav-item {
+  list-style-type: none;
+  border-bottom: solid 1px #eee;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 0;
+}
+
+.navbar .menu-large ul .nav-item a {
+  color: #999;
+  font-size: 0.738rem;
+  display: block;
+  padding: 0 !important;
+}
+
+.navbar .menu-large ul .nav-item a:hover {
+  color: #4fbfa8 !important;
+  text-decoration: none;
+}
+
+.navbar .menu-large .banner {
+  margin-bottom: 10px;
+}
+
+.navbar #basket-overview {
+  padding: 0;
+}
+
+.navbar .navbar-btn {
+  color: #fff;
+  margin-right: 10px;
+}
+
+#search {
+  background: #fff;
+}
+
+#search .container {
+  text-align: right;
+}
+
+#search form {
+  max-width: 500px;
+  padding: 20px 0;
+}
+
+#search .navbar-form {
+  float: right;
+  width: 500px;
+}
+
+.breadcrumb {
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 0;
+  padding: 0.5rem 1rem;
+}
