@@ -27,7 +27,7 @@ export class ProductService {
 	}
 
 	getProducts() {
-		this.products = this.db.list('products');
+		this.products = this.db.list('Restaurant/01/detail/Foods');
 		return this.products;
 	}
 
@@ -36,7 +36,7 @@ export class ProductService {
 	}
 
 	getProductById(key: string) {
-		this.product = this.db.object('products/' + key);
+		this.product = this.db.object('Restaurant/01/detail/Foods/' + key);
 		return this.product;
 	}
 

@@ -1,11 +1,11 @@
 export class Product {
   $key: string;
   productId: number;
-  productName: string;
+  Product: string;
   productCategory: string;
-  productPrice: number;
-  productDescription: string;
-  productImageUrl: string;
+  Price: number;
+  Description: string;
+  'Image Link': string;
   productAdded: number;
   productQuatity: number;
   ratings: number;

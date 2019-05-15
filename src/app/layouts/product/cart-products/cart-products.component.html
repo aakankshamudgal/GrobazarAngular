@@ -10,11 +10,11 @@
         <div class="cartSection">
         <img [src]="product.productImageUrl" alt="" class="itemImg" />
           <p class="itemNumber">{{ product.productCategory }}</p>
-          <h3>{{ product.productName }}</h3>
-          <p>{{ product.productDescription }}</p>
+          <h3>{{ product.Product }}</h3>
+          <p>{{ product.Description }}</p>
         </div>  
         <div class="prodTotal cartSection">
-          <p>₹ {{ product.productPrice }}</p>
+          <p>₹ {{ product.Price }}</p>
         </div>
               <div class="cartSection removeWrap">
            <a (click)="removeCartProduct(product)">

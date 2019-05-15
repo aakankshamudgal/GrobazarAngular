@@ -22,7 +22,7 @@
 
       <div class="container">
     <div class="row" *ngIf="!loading">
-        <div class="col-md-3 col-sm-6" *ngFor="let product of productList | filterByBrand: selectedBrand | paginate: { itemsPerPage: 4, currentPage: page }">
+        <div class="col-md-3 col-sm-6" *ngFor="let product of productList | filterByBrand: selectedBrand | paginate: { itemsPerPage: 12, currentPage: page }">
             <div class="product-grid3">
                 <div class="product-image3">
                     <a [routerLink]="['/products/product', product.$key]">
@@ -41,12 +41,12 @@
                     <h3 class="title">{{ product.productCategory }}</h3>
                     <strong>
                         <a [routerLink]="['/products/product', product.$key]" routerLinkActive="router-link-active">{{
-                          product.productName }}</a>
+                          product.Product }}</a>
                     </strong>
-                    <p class="card-text">{{ product.productDescription }}
+                    <p class="card-text">{{ product.Description }}
                     </p>
                     <div class="price">
-                        ₹ {{ product.productPrice }}
+                        ₹ {{ product.Price }}
                     </div>
                 
                 </div>

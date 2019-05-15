@@ -1,9 +1,9 @@
 export const FireBaseConfig = {
-   	apiKey: "AIzaSyA4JwMTNfarD3RPIXxCQGPLVt4yIxxuJ1U",
-    authDomain: "flipdd-93dc4.firebaseapp.com",
-    databaseURL: "https://flipdd-93dc4.firebaseio.com",
-    projectId: "flipdd-93dc4",
-    storageBucket: "flipdd-93dc4.appspot.com",
-    messagingSenderId: "150335059724",
-    appId: "1:150335059724:web:d8cd70e901d91dd4"
+    apiKey: "AIzaSyCNrMW19sZm1RbmOGGecSJcrKBq3rRqEUU",
+    authDomain: "testgrobazar.firebaseapp.com",
+    databaseURL: "https://testgrobazar.firebaseio.com",
+    projectId: "testgrobazar",
+    storageBucket: "testgrobazar.appspot.com",
+    messagingSenderId: "443992488343",
+    appId: "1:443992488343:web:5b4538bf74bee47c"
 };
