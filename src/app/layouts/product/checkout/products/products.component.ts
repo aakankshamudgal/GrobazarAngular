@@ -21,8 +21,8 @@ export class ProductsComponent implements OnInit {
 		this.checkoutProducts = products;
 
 		products.forEach((product) => {
-			var amount= parseInt(product.Price);
-			this.totalPrice += amount;
+			// var amount= parseInt(product.Price);
+			this.totalPrice += product.Price;
 		});
 	}
 

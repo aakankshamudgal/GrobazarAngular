@@ -10,6 +10,7 @@ export class ProductService {
 	products: AngularFireList<Product>;
 	product: AngularFireObject<Product>;
 	categories: AngularFireList<Category>;
+	categoryProducts: AngularFireList<Category>;
 
 	// favouriteProducts
 	favouriteProducts: AngularFireList<FavouriteProduct>;
@@ -26,6 +27,11 @@ export class ProductService {
 	) {
 		this.calculateLocalFavProdCounts();
 		this.calculateLocalCartProdCounts();
+	}
+
+	getCategoryProduct(category) {
+		this.categoryProducts = this.db.list('Restaurant/01/detail/Foods/', ref => ref.orderByChild('Category').equalTo(category));
+		return this.categoryProducts;
 	}
 
 	getProducts() {
