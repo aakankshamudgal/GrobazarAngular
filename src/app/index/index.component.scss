@@ -17,7 +17,7 @@
       height: 100%;
   }
 
-  #features {
+  #features { 
   display: inline-block;
   height: 100%;
   width: 100%;
@@ -109,3 +109,8 @@ a {
   letter-spacing: 2px;
   text-decoration: none;
 }
+
+.product-grid3 .product-image3{position:relative}
+.product-grid3 .product-image3 a{display:block}
+.product-grid3 .product-image3 img{width:100%;height:auto}
+.product-grid3 .pic-1{opacity:1;transition:all .5s ease-out 0s}
