@@ -18,14 +18,14 @@ export class ResultComponent implements OnInit {
 	constructor(private productService: ProductService) {
 		/* Hiding Billing Tab Element */
 		document.getElementById('productsTab').style.display = 'none';
-		document.getElementById('shippingTab').style.display = 'none';
 		document.getElementById('billingTab').style.display = 'none';
 		document.getElementById('resultTab').style.display = 'block';
 
 		this.products = productService.getLocalCartProducts();
 
 		this.products.forEach((product) => {
-			this.totalPrice += product.productPrice;
+			var amount= parseInt(product.Price);
+			this.totalPrice += amount;
 		});
 
 		this.date = Date.now();
@@ -50,5 +50,9 @@ export class ResultComponent implements OnInit {
 			pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
 			pdf.save('reciept.pdf'); // Generated PDF
 		});
+	}
+
+	clear(){
+		localStorage.clear();
 	}
 }

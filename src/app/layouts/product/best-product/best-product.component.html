@@ -39,25 +39,23 @@
           <div class="card-body text-center no-padding">
             <!--Category & Title-->
             <a href="" class="text-muted">
-              <h5>{{ product.productCategory }}</h5>
+              <h5>{{ product.Category }}</h5>
             </a>
             <h5 class="card-title">
               <strong>
-                <a [routerLink]="['/products/product', product.$key]">{{ product.productName }}</a>
+                <a [routerLink]="['/products/product', product.$key]">{{ product.Product }}</a>
               </strong>
             </h5>
 
             <!--Description-->
-            <p class="card-text">{{ product.productDescription }}
+            <p class="card-text">{{ product.Description }}
             </p>
 
             <!--Card footer-->
             <div class="card-footer">
-              <span class="left">₹ {{ product.productPrice }}</span>
+              <span class="left">₹ {{ product.Price }}</span>
               <span class="right">
-                <a placement="top" mdbTooltip="Add to Wishlist" container="body">
-                  <i class="fa fa-heart"></i>
-                </a>
+                <a (click)="addFavourite(product)"><i class="fa fa-heart"></i></a>
               </span>
             </div>
           </div>

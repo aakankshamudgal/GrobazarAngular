@@ -39,11 +39,11 @@
           <tbody>
             <tr *ngFor="let product of products">
               <td class="col-md-9">
-                <h6><em>{{product.productName}}</em></h6>
+                <h6><em>{{product.Product}}</em></h6>
               </td>
               <td></td>
-              <td class="col-md-1 text-center">₹ {{product.productPrice}}</td>
-              <td class="col-md-1 text-center">₹ {{product.productPrice}}</td>
+              <td class="col-md-1 text-center">₹ {{product.Price}}</td>
+              <td class="col-md-1 text-center">₹ {{product.Price}}</td>
             </tr>
             <tr>
               <td>   </td>
@@ -77,7 +77,7 @@
             </tr>
           </tbody>
         </table>
-        <button type="button" class="btn btn-success btn-lg btn-block">
+        <button type="button" (click)="clear()" class="btn btn-success btn-lg btn-block">
           Pay Now   <span class="glyphicon glyphicon-chevron-right"></span>
         </button>
       </div>

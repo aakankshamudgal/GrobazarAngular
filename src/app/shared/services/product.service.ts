@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from 'angularfire2/database';
 import { Product } from '../models/product';
+import { Category } from '../models/category';
 import { AuthService } from './auth.service';
 import { ToastrService } from './toastr.service';
 
@@ -8,6 +9,7 @@ import { ToastrService } from './toastr.service';
 export class ProductService {
 	products: AngularFireList<Product>;
 	product: AngularFireObject<Product>;
+	categories: AngularFireList<Category>;
 
 	// favouriteProducts
 	favouriteProducts: AngularFireList<FavouriteProduct>;
@@ -29,6 +31,11 @@ export class ProductService {
 	getProducts() {
 		this.products = this.db.list('Restaurant/01/detail/Foods');
 		return this.products;
+	}
+
+	getCategories(){
+		this.categories = this.db.list('Restaurant/01/detail/Category');
+		return this.categories;
 	}
 
 	createProduct(data: Product) {

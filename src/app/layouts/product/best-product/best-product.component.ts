@@ -59,4 +59,8 @@ export class BestProductComponent implements OnInit {
 			}
 		);
 	}
+
+	addFavourite(product: Product) {
+		this.productService.addFavouriteProduct(product);
+	}
 }

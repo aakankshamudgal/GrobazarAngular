@@ -31,45 +31,20 @@
     <span class="carousel-control-next-icon"></span>
   </a>
 </div>
-  
-  <div class="container">
-      <div class="row text-center">
-
-        <div class="col-md-6 col-lg-4">
-          <div class="feature-block">
-
-            <img src="../../assets/banner_img/cloud.svg" alt="img" class="img-fluid">
-            <h4>Prebuilt design</h4>
-            <p>SDA</p>
-            <a [routerLink]="[ '/products/all-products' ]">Click Here</a>
-
-          </div>
+<div class="row" *ngIf="!loading">
+        <div class="col-md-3 col-sm-6" *ngFor="let category of categoryList">
+            <div class="product-grid3">
+                <div class="product-image3">
+                  <a [routerLink]="['/products/all-product']">
+                    <img class="pic-1" [src]="category.image">
+                  </a>
+                </div>
+                <div class="product-content">
+                    <h3 class="title">{{ category.name }}</h3>            
+                </div>
+            </div>
         </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="feature-block">
-
-            <img src="../../assets/banner_img/planet.svg" alt="img" class="img-fluid">
-            <h4>Your Design</h4>
-            <p>Bleh</p>
-            <a [routerLink]="['/YourDesign']">Click Here</a>
-
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="feature-block">
-
-            <img src="../../assets/banner_img/asteroid.svg" alt="img" class="img-fluid">
-            <h4>Make us do</h4>
-            <p>Bleh</p>
-            <a [routerLink]="[ '/makeusdo' ]">Click Here</a>
-
-          </div>
-        </div>
-
-      </div>
-   </div>
+</div>
 
 <div class="container">
 
