@@ -1,24 +1,7 @@
 <div class="container">
-  <div class="row" *ngIf="authService.isAdmin()">
-    <div class="col-sm">
-      <div class="float-right">
-        <button type="button" class="btn btn-primary waves-light" data-toggle="modal" data-target="#exampleModalLong">
-          Add Product
-        </button>
-      </div>
-    </div>
-  </div>
 <br>
   <div class="row">
-    <div class="col-md-3">
-      <div class="form-group">
-        <label for="brand_select">By Brands:</label>
-        <select class="form-control" name="" id="brand_select" [(ngModel)]="selectedBrand">
-          <option *ngFor="let brand of brands" [ngValue]="brand">{{brand}}</option>
-        </select>
-      </div>
-    </div>
-    <div class="col-md-9">
+    <div class="col-md-12">
 
       <div class="container">
     <div class="row" *ngIf="!loading">
@@ -43,7 +26,7 @@
                         <a [routerLink]="['/products/product', product.$key]" routerLinkActive="router-link-active">{{
                           product.Product }}</a>
                     </strong>
-                    <p class="card-text">{{ product.Description }}
+                    <p class="card-text">{{ product.Description | truncate:[40] }}
                     </p>
                     <div class="price">
                         ₹ {{ product.Price }}

@@ -23,7 +23,7 @@ import { UserService } from "./services/user.service";
 import { NgxContentLoadingModule } from "ngx-content-loading";
 import { CardLoaderComponent } from "./components/card-loader/card-loader.component";
 import { MomentTimeAgoPipe } from "./pipes/moment-time-ago.pipe";
-
+import { TruncatePipe } from "./pipes/truncate";
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { CdkTableModule } from "@angular/cdk/table";
 import { CdkTreeModule } from "@angular/cdk/tree";
@@ -45,6 +45,7 @@ import { CdkTreeModule } from "@angular/cdk/tree";
 	declarations: [
 		NoProductsFoundComponent,
 		FilterByBrandPipe,
+		TruncatePipe,
 		NoAccessComponent,
 		PageNotFoundComponent,
 		CardLoaderComponent,
@@ -62,6 +63,7 @@ import { CdkTreeModule } from "@angular/cdk/tree";
 		OwlModule,
 		NgxPaginationModule,
 		FilterByBrandPipe,
+		TruncatePipe,
 		NoAccessComponent,
 		PageNotFoundComponent,
 		MomentTimeAgoPipe,

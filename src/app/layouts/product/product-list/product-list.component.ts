@@ -5,6 +5,7 @@ import { ProductService } from '../../../shared/services/product.service';
 import { ToastrService } from 'src/app/shared/services/toastr.service';
 import { ActivatedRoute } from '@angular/router';
 import { element } from '@angular/core/src/render3';
+
 @Component({
 	selector: 'app-product-list',
 	templateUrl: './product-list.component.html',
@@ -13,9 +14,7 @@ import { element } from '@angular/core/src/render3';
 export class ProductListComponent implements OnInit {
 	productList: Product[];
 	loading = false;
-	brands = ['All', 'Poster' ,'Notebooks' , 'Badges' , 'Special Kits'];
 
-	selectedBrand: 'All';
 
 	page = 1;
 	constructor(
