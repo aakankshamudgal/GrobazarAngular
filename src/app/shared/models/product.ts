@@ -9,5 +9,5 @@ export class Product {
   Reserve: number;
   ratings: number;
   favourite: boolean;
-  productSeller: string;
+  SubCategory: string;
 }

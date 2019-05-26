@@ -1,20 +1,26 @@
- <nav class="navbar navbar-expand-lg">
-        <div class="container"><a href="index.html" class="navbar-brand home"><img src="img/logo.png" alt="FlipaDD logo" class="d-none d-md-inline-block"><img src="img/logo-small.png" alt="FlipDD logo" class="d-inline-block d-md-none"><span class="sr-only">FlipDD</span></a>
-          <div class="navbar-buttons">
-            <button type="button" data-toggle="collapse" data-target="#navigation" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
-            <a class="btn btn-outline-secondary  navbar-toggler" href="javascript:;;" [routerLink]="['/products/favourite-products']"><i class="fa fa-heart"></i>
-            </a>
-            <a href="javascript:;;" [routerLink]="['/products/cart-items']" class="btn btn-outline-secondary navbar-toggler"><i class="fa fa-shopping-cart"></i></a>
-          </div>
-          <div id="navigation" class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item"><a href="javascript:;;" [routerLink]="[ '/' ]" class="nav-link">Home</a></li>
-              <li class="nav-item menu-large"><a href="javascript:;;" [routerLink]="[ '/products/all-products' ]" class=" nav-link">Product<b class="caret"></b></a>
-              </li>
-            </ul>
-            <div class="navbar-buttons d-flex justify-content-end">
-              <!-- /.nav-collapse-->
-              <ul class="navbar-nav mr-auto">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+   <!--  <div class="container"> -->
+        <a class="navbar-brand" [routerLink]="[ '/' ]">GroBazar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="form-inline my-2 my-lg-0">
+                <a class="btn btn-success btn-sm ml-3" [routerLink]="['/products/favourite-products']">
+                    <i class="fa fa-heart"></i>
+                </a>
+                <a class="btn btn-success btn-sm ml-3"  [routerLink]="['/products/cart-items']">
+                    <i class="fa fa-shopping-cart"></i> Cart
+                    <span class="badge badge-light">{{productService.navbarCartCount}}</span>
+                </a>
+            </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault" *ngIf="!loading">
+            <ul class="navbar-nav m-auto">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="[ '/' ]" >Home</a>
+                </li>
+                <li class="nav-item" *ngFor="let category of categoryList">
+                    <a class="nav-link" routerLink="products/category/{{category.name}}">{{category.name}}</a>
+                </li>
                 <li class="nav-item" *ngIf="authService.isLoggedIn()">
                   <a class="nav-link" [routerLink]="['/users']">
                   <i class="fa fa-user mr-1"></i>MY ACCOUNT</a>
@@ -27,29 +33,9 @@
                   <a class="nav-link" (click)="logout()">
                     <i class="fa fa-sign-in mr-1"></i>LOGOUT</a>
                 </li>
-  
-              </ul>
+            </ul>
 
-              <div id="basket-overview" class="navbar-collapse collapse d-none d-lg-block">
-                <a class="nav-link" href="javascript:;;" [routerLink]="['/products/favourite-products']">
-                <i class="fa fa-heart">
-                  <span class="mt-2"> {{productService.navbarFavProdCount}}</span>
-                </i>
-                </a>
-                <a href="javascript:;;" [routerLink]="['/products/cart-items']" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span> {{productService.navbarCartCount}} items in cart</span></a></div>
-            </div>
-          </div>
+          
         </div>
-      </nav>
-     <!--  <div id="search" class="collapse">
-        <div class="container">
-          <form role="search" class="ml-auto">
-            <div class="input-group">
-              <input type="text" placeholder="Search" class="form-control">
-              <div class="input-group-append">
-                <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div> -->
+    <!-- </div> -->
+</nav>

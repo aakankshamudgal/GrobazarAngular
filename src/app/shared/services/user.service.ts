@@ -19,7 +19,7 @@ export class UserService {
   }
 
   getUsers() {
-    this.users = this.db.list("clients");
+    this.users = this.db.list("User");
     return this.users;
   }
 

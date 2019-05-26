@@ -21,7 +21,7 @@ export class BillingService {
   }
 
   getBillings() {
-    this.billings = this.db.list("billings");
+    this.billings = this.db.list("User");
     return this.billings;
   }
 

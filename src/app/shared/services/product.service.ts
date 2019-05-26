@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from 'angularfire2/database';
 import { Product } from '../models/product';
 import { Category } from '../models/category';
+import { Banner } from '../models/banner';
 import { AuthService } from './auth.service';
 import { ToastrService } from './toastr.service';
 
@@ -11,6 +12,7 @@ export class ProductService {
 	product: AngularFireObject<Product>;
 	categories: AngularFireList<Category>;
 	categoryProducts: AngularFireList<Category>;
+	banner: AngularFireList<Banner>;
 
 	// favouriteProducts
 	favouriteProducts: AngularFireList<FavouriteProduct>;
@@ -61,6 +63,10 @@ export class ProductService {
 		this.products.remove(key);
 	}
 
+	getBanner(){
+		this.banner = this.db.list('Restaurant/01/detail/Banner');
+		return this.banner;
+	}
 	/*
    ----------  Favourite Product Function  ----------
   */

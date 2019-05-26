@@ -14,7 +14,9 @@ import { element } from '@angular/core/src/render3';
 export class ProductListComponent implements OnInit {
 	productList: Product[];
 	loading = false;
+	brands = ['All', 'Poster' ,'Notebooks' , 'Badges' , 'Special Kits'];
 
+	selectedBrand: 'All';
 
 	page = 1;
 	constructor(
