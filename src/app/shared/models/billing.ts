@@ -6,6 +6,7 @@ export class Billing {
   address1: string;
   address2: string;
   country: string;
+  place: string;
   state: string;
   zip: string;
 }

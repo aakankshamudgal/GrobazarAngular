@@ -42,13 +42,23 @@
 
       <div class="mb-3">
         <label for="address2">Address 2
-          <span class="text-muted">(Optional)</span>
+          <span class="text-muted"></span>
         </label>
         <input type="text" class="form-control" id="address2" placeholder="Apartment or suite" [(ngModel)]="userDetail.address2"
-          name="address2">
+          name="address2" required>
       </div>
 
       <div class="row">
+        <div class="col-md-5 mb-3">
+          <label for="country">Place</label>
+          <select class="custom-select d-block w-100" id="place" required [(ngModel)]="userDetail.place" name="place">
+            <option value="">Choose...</option>
+            <option>Mans</option>
+          </select>
+          <div class="invalid-feedback">
+            Please select a valid City.
+          </div>
+        </div>
         <div class="col-md-5 mb-3">
           <label for="country">City</label>
           <select class="custom-select d-block w-100" id="country" required [(ngModel)]="userDetail.country" name="country">
@@ -56,7 +66,7 @@
             <option>Jaipur</option>
           </select>
           <div class="invalid-feedback">
-            Please select a valid country.
+            Please select a valid City.
           </div>
         </div>
         <div class="col-md-4 mb-3">
