@@ -5,7 +5,7 @@ export class Product {
   Category: string;
   Price: number;
   Description: string;
-  'Image Link': string;
+  image: string;
   Reserve: number;
   ratings: number;
   favourite: boolean;

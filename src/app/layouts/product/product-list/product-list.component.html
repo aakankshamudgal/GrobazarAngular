@@ -17,19 +17,16 @@
             <div class="product-grid3">
                 <div class="product-image3">
                     <a [routerLink]="['/products/product', product.$key]">
-                        <img class="pic-1" [src]="product.productImageUrl">
+                        <img class="pic-1" [src]="product.image">
                     </a> 
                     <ul class="social">
                         <li><a (click)="addFavourite(product)"><i class="fa fa-heart"></i></a></li>
                         <li><a (click)="addToCart(product)"><i class="fa fa-shopping-cart"></i></a></li>
-                        <li><a placement="top" mdbTooltip="Remove Product" container="body" *ngIf="authService.isAdmin()"
-                          (click)="removeProduct(product.$key)">
-                          <i class="fa fa-trash"></i>
-                        </a></li>
+                        
                     </ul>
                 </div>
                 <div class="product-content">
-                    <h3 class="title">{{ product.Category }}</h3>
+              <!--       <h3 class="title">{{ product.Category }}</h3> -->
                     <strong>
                         <a [routerLink]="['/products/product', product.$key]" routerLinkActive="router-link-active">{{
                           product.Product }}</a>

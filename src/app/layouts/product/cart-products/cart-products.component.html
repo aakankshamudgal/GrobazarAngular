@@ -8,10 +8,10 @@
       <li class="items odd" *ngFor="let product of cartProducts"> 
         <div class="infoWrap"> 
         <div class="cartSection">
-        <img [src]="product.productImageUrl" alt="" class="itemImg" />
-          <p class="itemNumber">{{ product.Category }}</p>
-          <h3>{{ product.Product }}</h3>
-          <p>{{ product.Description }}</p>
+        <img [src]="product.image" alt="" class="itemImg" />
+          <!-- p class="itemNumber">{{ product.Category }}</p> -->
+          <h3>{{ product.Product | truncate:[20] }}</h3>
+          <p>{{ product.Description | truncate:[40] }}</p>
         </div>  
         <div class="prodTotal cartSection">
           <p>₹ {{ product.Price }}</p>

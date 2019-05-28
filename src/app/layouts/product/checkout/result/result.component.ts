@@ -13,7 +13,7 @@ export class ResultComponent implements OnInit {
 	products: Product[];
 	date: number;
 	totalPrice = 0;
-	tax = 6.4;
+	DC;
 
 	constructor(private productService: ProductService) {
 		/* Hiding Billing Tab Element */
@@ -25,7 +25,13 @@ export class ResultComponent implements OnInit {
 
 		this.products.forEach((product) => {
 			// var amount= parseInt(product.Price);
-			this.totalPrice += product.Price;				;
+			this.totalPrice += product.Price;	
+			if(this.totalPrice < 499){
+				this.DC = 50;
+			}
+			else{
+				this.DC = 0;
+			}			
 		});
 
 		this.date = Date.now();

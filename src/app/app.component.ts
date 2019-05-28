@@ -13,8 +13,10 @@ declare var $: any;
 export class AppComponent implements OnInit {
   title = "app";
 
-  constructor(private userService: UserService,
-  private titleService: Title) {}
+  constructor(
+    private userService: UserService,
+    private titleService: Title,
+  ) {}
 
   ngOnInit() {
     $(document).ready(function() {
@@ -30,7 +32,6 @@ export class AppComponent implements OnInit {
         autoplayHoverPause: true
       });
     });
-
-  
+   
   }
 }
