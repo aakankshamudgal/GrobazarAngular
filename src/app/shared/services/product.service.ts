@@ -5,6 +5,7 @@ import { Category } from '../models/category';
 import { Banner } from '../models/banner';
 import { AuthService } from './auth.service';
 import { ToastrService } from './toastr.service';
+import { SubCategory } from '../models/subCategory';
 
 @Injectable()
 export class ProductService {
@@ -13,6 +14,8 @@ export class ProductService {
 	categories: AngularFireList<Category>;
 	categoryProducts: AngularFireList<Category>;
 	banner: AngularFireList<Banner>;
+	subCategory: AngularFireList<SubCategory>;
+	subCategoryProduct: AngularFireList<Product>;
 
 	// favouriteProducts
 	favouriteProducts: AngularFireList<FavouriteProduct>;
@@ -29,6 +32,16 @@ export class ProductService {
 	) {
 		this.calculateLocalFavProdCounts();
 		this.calculateLocalCartProdCounts();
+	}
+
+	getSubCategories(category) {
+		this.subCategory = this.db.list('subCategory/01110/'+ category);
+		return this.subCategory;
+	}
+
+	getSubCategoryProduct(subcategory) {
+		this.subCategoryProduct = this.db.list('Restaurant/01/detail/Foods/', ref => ref.orderByChild('SubCategory').equalTo(subcategory));
+		return this.subCategoryProduct;
 	}
 
 	getCategoryProduct(category) {

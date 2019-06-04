@@ -1,19 +1,19 @@
   <div class="container">
 <br>
   <div class="row">
-   <!--  <div class="col-md-3">
+    <div class="col-md-3">
       <div class="form-group">
-        <label for="brand_select">By Brands:</label>
-        <select class="form-control" name="" id="brand_select" [(ngModel)]="selectedBrand">
-          <option *ngFor="let brand of brands" [ngValue]="brand">{{brand}}</option>
-        </select>
+        <label for="brand_select">By Subcateogy</label>
+        <ul *ngFor="let subcat of subCategoryList">
+          <li><a [routerLink]="['/products/category/',subcat.catname,subcat.name]"> {{ subcat.name }} </a> </li>
+        </ul>
       </div>
-    </div> -->
-    <div class="col-md-12">
+    </div>
+    <div class="col-md-9">
 
       <div class="container">
     <div class="row" *ngIf="!loading">
-        <div class="col-md-3 col-sm-6" *ngFor="let product of productList | filterByBrand: selectedBrand | paginate: { itemsPerPage: 12, currentPage: page }">
+        <div class="col-md-4 col-sm-6" *ngFor="let product of productList | filterByBrand: selectedBrand | paginate: { itemsPerPage: 12, currentPage: page }">
             <div class="product-grid3">
                 <div class="product-image3">
                     <a [routerLink]="['/products/product', product.$key]">
