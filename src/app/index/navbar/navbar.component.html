@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark" style="background-color: white;color: white;">
    <!--  <div class="container"> -->
         <a class="navbar-brand" [routerLink]="[ '/' ]">GroBazar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,11 +13,11 @@
                     <span class="badge badge-light">{{productService.navbarCartCount}}</span>
                 </a>
             </div>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault" *ngIf="!loading">
-            <ul class="navbar-nav m-auto">
-                <li class="nav-item">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault" *ngIf="!loading" >
+            <ul class="navbar-nav m-auto"  >
+               <!-- <li class="nav-item">
                     <a class="nav-link" [routerLink]="[ '/' ]" >Home</a>
-                </li>
+                </li>-->
                 <li class="nav-item" *ngFor="let category of categoryList">
                     <a class="nav-link" routerLink="products/category/{{category.name}}">{{category.name}}</a>
                 </li>
@@ -33,9 +33,83 @@
                   <a class="nav-link" (click)="logout()">
                     <i class="fa fa-sign-in mr-1"></i>LOGOUT</a>
                 </li>
-            </ul>
+            </ul><br><br><br>
+            
+         <!-- code for search bar    
+    <style>
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-          
-        </div>
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+    float: right;
+    height: 40px;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid gray;
+  border-right: none;
+  padding: 5px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+     float: right;
+    height: 36px;
+   margin-top: 40px;
+     z-index: -1;
+    background: white;
+
+}
+
+.searchTerm:focus{
+  color: black;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid gray;
+  background: #838B8B;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+    margin-top: 40px;
+    z-index: -1;
+}
+
+.searchButton:hover{
+  background:darkslategray
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: fixed;
+ /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);*/
+}        
+    </style>
+            <script>
+                windows.onscroll
+            </script>
+    <div class="wrap">
+   <div class="search">
+      <input type="text" class="searchTerm" placeholder="What are you looking for?" id="search">
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+   </div>
+</div> -->
+</div>
     <!-- </div> -->
 </nav>

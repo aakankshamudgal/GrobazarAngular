@@ -1,9 +1,9 @@
-  <div class="container">
+<div class="container">
 <br>
   <div class="row">
     <div class="col-md-3">
       <div class="form-group">
-        <label for="brand_select">By Subcateogy</label>
+        <label for="brand_select" style="margin-left: 48px;">By Subcategory</label>
         <ul *ngFor="let subcat of subCategoryList">
           <li><a [routerLink]="['/products/category/',subcat.catname,subcat.name]"> {{ subcat.name }} </a> </li>
         </ul>
@@ -19,19 +19,18 @@
                     <a [routerLink]="['/products/product', product.$key]">
                         <img class="pic-1" [src]="product.image">
                     </a> 
-                    <ul class="social">
+                    <ul class="social" style="list-style-type: none;text-decoration: none;">
                         <li><a (click)="addFavourite(product)"><i class="fa fa-heart"></i></a></li>
                         <li><a (click)="addToCart(product)"><i class="fa fa-shopping-cart"></i></a></li>
-                        
                     </ul>
                 </div>
-                <div class="product-content">
+                <div class="product-content" >
               <!--       <h3 class="title">{{ product.Category }}</h3> -->
                     <strong>
                         <a [routerLink]="['/products/product', product.$key]" routerLinkActive="router-link-active">{{
                           product.Product }}</a>
                     </strong>
-                    <p class="card-text">{{ product.Description | truncate:[40] }}
+                    <p class="card-text" style="text-decoration: none;">{{ product.Description | truncate:[40] }}
                     </p>
                     <div class="price">
                         ₹ {{ product.Price }}
